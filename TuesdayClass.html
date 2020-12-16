@@ -1,0 +1,208 @@
+<html>
+        <head>
+            <title> Array Review </title>
+            <style>
+            .header{
+                color: black;
+                font-size: 50px;
+                padding: 50px;
+                background-color: burlywood;
+            }
+            #resa{
+                font-size: 50px;
+                color: black;
+                width: 500px;
+            }
+            </style>
+        </head>
+        <body>
+            <center>
+                <div class="header">
+                    <span> <strong>Array Manipulation in modern way</strong></span>
+                    </div>
+                    <hr>
+                    <div>
+                        <span id="resa"></span>
+                        </div>
+                </center>
+            <script>
+                var numbers = [1,2,3,4,5,6,7,8];
+                    // Manipulation array using map method.
+                    const doubledNumber = numbers.map(function(number){
+                      return number *5;
+                    });
+                    // Manipulation of array using reduce method. 
+                    const sumUpNumber = numbers.reduce(function(accumulator,nextVal){
+                        return accumulator + nextVal;
+                    },0);
+                    // Manipulation of array using filter method
+                    const oddNumbers = numbers.filter(function(number){
+                        return number %2 != 0;
+                    })
+                    
+var developers = [
+  {
+    id: 10,
+    name: "Mukiza",
+    company: "nova",
+    category: "frontend developer",
+    years: 14,
+    salary: 8000,
+  },
+  {
+    id: 2,
+    name: "Kwizera",
+    company: "beyond250",
+    category: "backend developer",
+    years: 30,
+    salary: 5000,
+  },
+  {
+    id: 41,
+    name: "Rwema",
+    company: "tiger",
+    category: "fullstack developer",
+    years: 16,
+    salary: 5000,
+  },
+  {
+    id: 99,
+    name: "Alice",
+    company: "wyz",
+    category: "software architecture",
+    years: 22,
+    salary: 5000,
+  }
+];
+ 
+ //var totolYears = developers.reduce(function(accumulator, dev){
+    // return accumulator + dev.years;
+ //},0);
+ 
+//display years of experience of developers;
+//document.getElementById("resa").innerHTML = "The Total Years Of Experience: " +totolYears;
+
+    var developerName = [];
+    developers.forEach(function(dev){
+        if(dev.years %2 !=0){
+        developerName.push(dev.name);
+        }
+    });
+
+    if(developerName.length == 0){
+        //document.getElementById("resa").innerHTML = "No One Of Them";
+    }else{
+        //document.getElementById("resa").innerHTML = developerName;
+    }
+
+// var FilterYearsOfExperience = developers.filter(function(dev){
+//     return dev.years  < 19;
+// })
+// console.log(FilterYearsOfExperience);
+// var names = [];
+// FilterYearsOfExperience.forEach(function(dev){
+//  names.push(dev.name);
+// })
+// alert(names);
+
+var bkSoftwareEngineers = [
+  {
+    id: 2,
+    name: "Makuza bernard",
+    branch: "Kacyiru",
+  },
+  {
+    id: 8,
+    name: "Ishimwe esther",
+    branch : "Remera",
+  },
+  {
+    id: 40,
+    name: "Kwizera Olvier",
+    branch: "Kacyiru",
+  },
+  {
+    id: 66,
+    name: "Batamuliza jennifer",
+    branch: "Remera",
+  }
+];
+    var bkEngineers = bkSoftwareEngineers.filter(function(dev){
+        return dev.branch === "Remera";
+    });
+
+    var names= [];
+    bkEngineers.forEach(function(engineer){
+
+        names.push(engineer.name);
+    })
+    //document.getElementById("resa").innerHTML = names;
+//---------------------------------------------------------------------------------------------------------
+    //Tomorow Class
+
+    //filter() map() reduce() method works together
+var customerOrder= [
+    {
+    id: 2,
+    productName: "Cup",
+    price: 2500,
+  },
+  {
+    id: 8,
+    productName: "Avocado",
+    price : 1000,
+  },
+  {
+    id: 2,
+    productName: "Coffee",
+    price: 1500,
+  },
+  {
+    id: 12,
+    productName: "Banana",
+    price: 500,
+  }
+];
+var totalAmountToPay = customerOrder.filter(customer => customer.id ===2)
+                                    .map(customer => customer.price)
+                                    .reduce((acc, amount) => acc +amount,0);
+    //document.getElementById("resa").innerHTML ="Amount To Pay = " + totalAmountToPay +"Rwf";
+                                    
+//var productNames = [];
+ // totalAmountToPay.forEach(function(customer){
+    //  return productNames.push(customer.price);
+  //});
+  //console.log(productNames);
+                    
+
+        //find() methods
+        foundDev = bkSoftwareEngineers.find(function(dev){
+            return dev.id === 4;
+        });
+//document.getElementById("resa").innerHTML = "Developer Id : "+foundDev.id +"<br/>Dev Name : "+foundDev.name + " <br/>Dev Branch: "+foundDev.branch;
+        if(foundDev){
+       // document.getElementById("resa").innerHTML = "Bk Software engineer Found";
+        }else{
+        //document.getElementById("resa").innerHTML = "This Software engineer does not exist";  
+        }
+        //some() method
+        const teendev = developers.some(function(dev){
+            return dev.years < 20;
+        });
+        //console.log(teendev);
+        const softEng = bkSoftwareEngineers.every(function(engineer){
+                    return engineer.branch === "Kacyiru";
+        });
+        //console.log(softEng);
+        const data = [{id: 'a'}, {id: 'b'}, {id: 'c'}];
+        const foundIndex = data.findIndex(function(item){
+            return item.id === 'c';
+        });
+        const findIndex = customerOrder.findIndex(function(order){
+            return order.price === 1500;
+        })
+            document.getElementById("resa").innerHTML = "Index Number : " +findIndex;
+
+            </script>
+            </body>
+            </html>
