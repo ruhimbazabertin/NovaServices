@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Objec Revies </title>
+</head>
+<body>
+	<div class="header">
+		<span><h2>Hello There!</h2></span>
+        </div>
+        <button onclick="()">UserProfile</button>
+<script>
+    function greetings(){
+        alert("Hello There!");
+    }
+
+    function User(names, age, email, phone, marks){
+        this.names = names;
+        this.age = age;
+        this.email = email;
+        this.phone = phone;
+        this.marks = marks;
+    }
+    function userInfo(){
+        alert('Hello There!');
+       // document.write("Names: " +user.names+" ");
+       // document.write("Age: "+user.age+" ");
+        //document.write("Email "+user.email+" ");
+        //document.write("Phone "+user.phone+" ");
+        //document.write("marks "+user.marks+"");
+    }
+
+    var user = new User("Ruhimbaza Bertin", 4, "ruhimbazab@gmail.com","0783474838",50);
+   
+   //get keys from an object
+  // var userKeys = Object.keys(user);
+   //alert(userKeys);
+
+   //object to array entries
+  // -------------------------------
+   const user1 = {
+       age: 30,
+       name: "Ngabo",
+       address: "Kigali"
+   }
+   const user1To = Object.entries(user1);
+   //alert(user1To); 
+
+   // Merging object with spread
+//--------------------------------
+   const spreadUser1 = {
+       ...user1,
+       favoriteArtist: 'Melody'
+   }
+  // document.write(spreadUser1.name + " "+ spreadUser1.favoriteArtist);
+
+  //Combining two object: Object.assign()
+ // --------------------------------------------
+ const student = {
+     name: 'Rwema',
+     birthYear: 1994
+ }
+ const studentNewVal = {
+     age: 26
+ }
+ const combine = Object.assign(student, studentNewVal);
+ //alert(combine);
+ //student.address = 'Kacyiru';
+ //console.log(combine);
+
+ // Freezing an object: Object.freeze();
+    Object.freeze(student);
+    student.status = 'Single';
+   // console.log(student);
+
+    </script>
+</body>
+</html>
