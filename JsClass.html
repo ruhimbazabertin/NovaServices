@@ -1,0 +1,74 @@
+<html>
+        <head>
+            <title> Javascript Class </title>
+            <style>
+            .header{
+                color: black;
+                font-size: 50px;
+                padding: 50px;
+                background-color: burlywood;
+            }
+            #resa{
+                font-size: 50px;
+                color: black;
+                width: 500px;
+            }
+            </style>
+        </head>
+        <body>
+            <center>
+                <div class="header">
+                    <span> <strong>Javascript Class</strong></span>
+                    </div>
+                    <hr>
+                    <div>
+                        <span id="risa"></span>
+                        </div>
+                        <div>
+                          <span id="message"></span>
+                         </div>
+                </center>
+                <script>
+class Rectangle {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+  calculateArea(){
+      var area;
+      area = this.height * this.width;
+      return document.getElementById("risa").innerHTML = "<strong> The Area is: "+ area +"</strong>";
+  }
+  describeShape(){
+      document.getElementById("message").innerHTML = "<strong>"+ "We have different shape" + "</strong>";
+  }  
+}
+
+var recta = new Rectangle(5,4);
+recta.calculateArea();
+recta.describeShape();
+
+
+
+
+class Student {
+    constructor(firstname,lastname,gender,address) {
+      this.firstname = firstname;
+      this.lastname = lastname;
+      this.gender   = gender;
+      this.address  = address;
+      this.studentNumber = 0;
+    }
+     registerStudent() {
+         this.studentNumber++;
+        // console.log(this.firstname, this.lastname, this.gender, this.address, this.studentNumber);
+         
+    }
+  }
+
+     //var student2 = new Student("r","rer","R","r");
+  //student2.registerStudent();
+
+</script>
+</body>
+</html>
