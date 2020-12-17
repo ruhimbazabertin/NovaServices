@@ -29,11 +29,14 @@
                          </div>
                 </center>
                 <script>
+//class declaration
 class Rectangle {
+    //constructor section
   constructor(height, width) {
     this.height = height;
     this.width = width;
   }
+  //methods section
   calculateArea(){
       var area;
       area = this.height * this.width;
@@ -44,13 +47,12 @@ class Rectangle {
   }  
 }
 
+//object instantion section
 var recta = new Rectangle(5,4);
+//call methods section
 recta.calculateArea();
 recta.describeShape();
-
-
-
-
+// create class called Student
 class Student {
     constructor(firstname,lastname,gender,address) {
       this.firstname = firstname;
