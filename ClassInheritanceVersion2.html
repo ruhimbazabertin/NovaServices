@@ -1,0 +1,88 @@
+<html>
+        <head>
+            <title> Javascript Class </title>
+            <style>
+            .header{
+                color: black;
+                font-size: 50px;
+                padding: 50px;
+                background-color: burlywood;
+            }
+            #resa{
+                font-size: 50px;
+                color: black;
+                width: 500px;
+            }
+            </style>
+        </head>
+        <body>
+            <center>
+                <div class="header">
+                    <span> <strong>Javascript Class</strong></span>
+                    </div>
+                    <hr>
+                    <div>
+                        <span id="risa"></span>
+                        </div>
+                        <hr/>
+                        <div>
+                          <span id="message"></span>
+                         </div>
+                         <hr/>
+                         <div>
+                         <span id="messe"></span>
+                               </div>
+                </center>
+                <script>
+                        //parent class
+                        class Person {
+                            constructor(name, age){
+                                this.name = name;
+                                this.age = age;
+                            }
+                            describeYourSelf(){
+                                document.getElementById("risa").innerHTML 
+                                = `I am ${this.name} and I am ${this.age} years old`;
+                            }
+                            greetings(){
+                                 return document.getElementById("risa").innerHTML = "<strong>" +`I am ${this.name}
+                                 and my greetings is dedicated to every one who is there!`+"</strong>";
+                            }
+
+                        }
+                        class Developer extends Person{
+                            constructor(name,age,yearsOfExperience){
+                                super(name,age);
+                                //custom behavior 
+                                this.yearsOfExperience = yearsOfExperience;
+                            }
+                            workCategory(){
+                                document.getElementById("message").innerHTML = `I am ${this.name} 
+                                and my work category is frontend developer`;
+                            }
+                            greetings(){
+                                return document.getElementById("messe").innerHTML ="<strong>" + `I am ${this.name} and my greetings is dedicated to All!!!` +"</strong>";
+                            }
+                        }
+
+                        //create an instance here
+                        const person1 = new Person("NGabo", 25);
+                        const developer1 = new Developer("Rwema", 30, 5);
+                            // display person1 on web page
+                        //document.getElementById("risa").innerHTML =
+                         //person1.name + " " +person1.age;
+
+                            //display developer1 on web page
+             
+                        //document.getElementById("risa").innerHTML =
+                         //developer1.name + " " +developer1.age + " "+developer1.yearsOfExperience;
+
+                        //console.log(developer1);
+                        //person1.workCategory());
+                        //developer1.workCategory();
+                        //developer1.describeYourSelf();
+                        person1.greetings();
+                        developer1.greetings();
+                    </script>
+                    </body>
+                    </html>
