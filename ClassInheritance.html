@@ -1,0 +1,145 @@
+<html>
+        <head>
+            <title> Javascript Class </title>
+            <style>
+            .header{
+                color: black;
+                font-size: 50px;
+                padding: 50px;
+                background-color: burlywood;
+            }
+            #resa{
+                font-size: 500px;
+                color: black;
+                width: 500px;
+            }
+            #message{
+                color: black;
+                font-size: 50px;
+                padding: 50px; 
+            }
+            </style>
+        </head>
+        <body>
+            <center>
+                <div class="header">
+                    <span> <strong>Javascript Class</strong></span>
+                    </div>
+                    <hr>
+                    <div>
+                        <span id="risa"></span>
+                        </div>
+                        <div>
+                          <span id="message"></span>
+                         </div>
+                         <div>
+                         <span id="messe"></span>
+                               </div>
+                </center>
+                <script>
+
+                    class Student{
+                        constructor(firstName,lastName,address,email){
+                            this.firstName = firstName;
+                            this.lastName = lastName;
+                            this.address = address;
+                            this.email  = email;
+                        }
+                        allStudent = [];
+                        getStudentInfo(){
+                            document.getElementById("risa").innerHTML = `FirstName: ${this.firstName +"<br/>"}
+                             LastName: ${this.lastName +"<br/>"} Address: ${this.address +"<br/>"}
+                               Email: ${this.email +"<hr/>"}`;
+                        }
+                        findAllStudent(student){
+                            return this.allStudent.push(student);
+                        }
+                        showMe(){
+                            return document.getElementById("message").innerHTML = "<strong>Look, I am available every where!</strong>";
+                        }
+                    }
+                    //inherit student class
+
+                    class Teacher extends Student{
+                        constructor(firstName,lastName,address,email,salary,experience){
+                            super(firstName,lastName,address,email);
+                            this.salary = salary;
+                            this.experience = experience;
+                        }
+                        login(){
+                            return document.getElementById("message").innerHTML = `loged as teacher ${this.lastName}`;
+                        }
+                    }
+
+                    var cedric = new Student("Mbanda","Antoine","Kabuga","mbanda@gmail.com");
+                    var student2 = new Student("Ahishakiye","Aline","Muhima","aline@gmail.com");
+                    //instantiate child class
+                    var teacher1 = new Teacher("Mukwende","Placide","Remera","placide@gmail.com",500000, 5);
+                    //console.log(teacher1);
+
+                    teacher1.showMe();
+                   // teacher1.login();
+
+                     //student1.getStudentInfo(); 
+                     //student2.getStudentInfo();
+                    cedric.findAllStudent(cedric);
+                    cedric.findAllStudent(student2);
+                    //console.log(cedric.allStudent);
+
+
+                        // for(student of cedric.allStudent){
+                        //     document.getElementById("risa").innerHTML = `FirstName: ${cedric.firstName +"<br/>"}
+                        //      LastName: ${cedric.lastName +"<br/>"} Address: ${cedric.address +"<br/>"}
+                        //        Email: ${cedric.email +"<hr/>"}`;
+                        // }
+
+
+
+// <!-- 
+//                     class User {
+//                         constructor(name, email){
+//                             this.name = name;
+//                             this.email = email;
+//                         }
+//                          courseList = [];
+
+//                         getUserInfo(){
+//                             return {name: this.name, email: this.email}
+//                         }
+//                         enrollCourse(name){
+//                             this.courseList.push(name);
+//                         }
+//                         getCourseList(){
+//                             return this.courseList;
+//                         }
+//                         login(){
+//                             return "You are logged in as Admin";
+//                         }
+//                     }
+
+//                     class Admin extends User{
+//                         constructor(name,email){
+//                             super(name, email);
+//                         }
+//                         getAdminInfo(){
+//                             return "I am Admin Here!";
+//                         }
+//                     }
+
+//                     const kalisa = new User("Kalisa", "kali@gmail.com");
+//                             kalisa.enrollCourse("Javascript");
+//                             kalisa.enrollCourse("React");
+//                            //console.log(kalisa.getUserInfo());
+//                             //console.log(kalisa.getCourseList());
+//                             //console.log(kalisa.courseList);
+
+//                             //admin
+//                             const bertin = new Admin("Bertin","ruhimbazab@gmail.com");
+//                             console.log(bertin.getAdminInfo());
+//                             console.log(bertin.login());
+//                             console.log(bertin.getUserInfo());
+
+//                    
+                 </script> 
+                    </body>
+                    </html>
