@@ -27,6 +27,9 @@
                         <div>
                           <span id="message"></span>
                          </div>
+                         <div>
+                         <span id="messe"></span>
+                               </div>
                 </center>
                 <script>
 //class declaration
@@ -44,7 +47,7 @@ class Rectangle {
   }
   describeShape(){
       document.getElementById("message").innerHTML = "<strong>"+ "We have different shape" + "</strong>";
-  }  
+  }
 }
 
 //object instantion section
@@ -52,6 +55,8 @@ var recta = new Rectangle(5,4);
 //call methods section
 recta.calculateArea();
 recta.describeShape();
+recta.longMessage();
+
 // create class called Student
 class Student {
     constructor(firstname,lastname,gender,address) {
